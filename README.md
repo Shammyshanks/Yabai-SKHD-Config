@@ -23,7 +23,7 @@ According to the Keyboard section of [Apple's Style Guide](https://developer.app
 
 > Prefer the Command key as the main modifier key in a keyboard shortcut
 
-> Prefer the Command key as the main modifier key in a keyboard shortcut
+> Prefer the Shift key as a secondary modifier when a shortcut complements another shortcut
 
 > Use the Option key as a modifier sparingly
 
@@ -45,3 +45,5 @@ This leaves our possible key combinations looking like this:
 |               | `Control` + `Option`      |                                      |                                                |
 
 The only 3 key combinations we have left are `Control` + `Option`, `Control` + `Shift`, and `Control` + `Option` + `Shift`. These are the 3 key combinations we will be using to manage Yabai.
+
+# A quick note on left vs right modifiers and the Function Key
