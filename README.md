@@ -166,4 +166,4 @@ NOTE: The create new terminal action only works with iTerm2
 * Export gaps variable for use in .gaps script when using keyboard shortcuts for changing gaps. Might require some changes to yabai.
 * Implement dynamic desktops, as seen in gnome desktop. (I already have a working script but it's glitchy)
 * shortcut to display keyboard shortcuts and maybe execute actions (maybe use [Menu-Hammer](https://github.com/FryJay/MenuHammer)?) like AwesomeWM.
-* Implement quick way to lable current space, maybe via alfred?
+* Implement quick way to lable current space, maybe via alfred? Also add specific apps for spaces.
