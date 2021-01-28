@@ -1,0 +1,27 @@
+#!/bin/bash
+
+SPACETYPE="$(yabai -m query --spaces --space | jq '.type')"
+
+# If the spacetype is bsp then toggle window border, otherwise turn it off
+if [ $SPACETYPE = '"bsp"' ]; then
+
+  # find total number of windows on current space that are not floating, not sticky, not minimized, but are visible.
+  TOTAL="$(yabai -m query --windows --space | jq '.[] | select(.floating==0) | select(.sticky==0) | select(.visible==1) | select(.minimized==0) | length % 23 + 1' | wc -l)"
+
+  # find current border width
+  CURRENT="$(yabai -m query --windows --space | jq '.[0].border')"
+  
+  # if the total is greater than 1, set padding, else disable padding.
+  if [[ $TOTAL -gt 1 ]]; then
+    if [[ $CURRENT -eq '0' ]]; then
+      yabai -m config window_border on
+    fi
+  else
+    if [[ $CURRENT -eq '1' ]]; then
+      yabai -m config window_border off
+    fi
+  fi
+
+else
+  yabai -m config window_border off
+fi

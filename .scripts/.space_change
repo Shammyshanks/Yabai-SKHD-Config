@@ -1,0 +1,11 @@
+#!/bin/bash
+
+TYPE=$(yabai -m query --spaces --space | jq .type)
+
+if [[ $TYPE = *"bsp"* ]]; then
+  yabai -m config layout stack && open -gj 'swiftbar://refreshPlugin?name=yabai'
+elif [[ $TYPE = *"stack"* ]]; then
+  yabai -m config layout float && open -gj 'swiftbar://refreshPlugin?name=yabai'
+else
+  yabai -m config layout bsp && open -gj 'swiftbar://refreshPlugin?name=yabai'
+fi
