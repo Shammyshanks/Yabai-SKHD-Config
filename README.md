@@ -69,6 +69,23 @@ Several actions also use exit codes to figure out if the current space is `bsp`,
 
 This reduces the number of discrete keyboard shortcuts the user has to remember.
 
+This script also integrates with my [SwiftBar](https://github.com/swiftbar/SwiftBar) plugin [Yabai-Spaces](https://github.com/SxC97/Yabai-Spaces) which shows you the current space you are on, the total number of spaces, the current space type, and weather the current window is floating or not. The refresh code at the end of several commands can be removed if you don't plan on using this feature.
+
+Several actions execute external scripts found in the `.scripts` folder. The script expects this folder and it's files to be in the home folder.
+
+These actions include
+* turning borders off if there is only 1 managed window in the current space
+* turning gaps off if there is only 1 managed window in the current space (This is where you would change the gaps settings, not .yabairc)
+* turning some Übersicht widgets off if there are any windows in the current space (This would require configuration if you plan on using it)
+* cycling through space management types
+* creating a new terminal window
+
+This yabairc configuration file also integrates with [pywal](https://github.com/dylanaraps/pywal)
+
+There is a section near the bottom of .yabairc that creates exceptions for various apps that mess with the .gaps and .border scripts in .scripts folder. If you are having trouble with an app, try adding it here.
+
+This .yabairc will also auto-update yabai if you install via --HEAD.
+
 # Keyboard Shortcut Table
 | Shortcut | Action | Notes |
 | -------- | ------ | ----- |
