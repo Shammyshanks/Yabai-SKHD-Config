@@ -44,7 +44,15 @@ This leaves our possible key combinations looking like this:
 |               | `Control` + `Shift`       |                                      |                                                |
 |               | `Control` + `Option`      |                                      |                                                |
 
-The only 3 key combinations we have left are `Control` + `Option`, `Control` + `Shift`, and `Control` + `Option` + `Shift`. These are the 3 key combinations we will be using to manage Yabai.
+The only 3 key combinations we have left are 
+
+`Control` + `Option`
+
+`Control` + `Shift`
+
+`Control` + `Option` + `Shift` 
+
+These are the 3 key combinations we will be using to manage Yabai.
 
 Note: if you don't care about typing unique charecters with `Option` and `Shift`, you can also add those combinations to the final list of shortcuts.
 
@@ -56,7 +64,13 @@ Since the user will be using the left modifier keys, all of the shortcuts will b
 As for the function key, this is a weird one. It *is* recognized by yabai but acts differently than the other modifiers and cannot always be picked up by applications. This, combined with the fact that it will not be found on most keyboards made me hesitant to rely on it for WM control. Instead, I will be using it for mouse control later on. If you don't mind, feel free to use it for Yabai.
 
 # How to use Keyboard shortcuts
-From now on, I will be referring to `Control + Option` as `mod1`, `Control + Shift` as `mod2`, and `Control + Option + Shift` as `mod3`.
+From now on, I will be referring to 
+
+`Control + Option` as `mod1`
+
+`Control + Shift` as `mod2`
+
+`Control + Option + Shift` as `mod3`
 
 In this configuration, `mod1` will the be the main modifier and as such it will be the most used modifier and control the most frequent actions.
 
