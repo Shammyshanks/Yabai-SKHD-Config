@@ -160,3 +160,4 @@ NOTE: if you want the focus spaces shortcut to work in mission control you need 
 * Implement thirds for floating windows (will be more useful if I ever upgrade to an ultrawide/super ultrawide.
 * Export gaps variable for use in .gaps script when using keyboard shortcuts for changing gaps
 * Implement dynamic desktops, as seen in gnome desktop. (I already have a working script but it's glitchy)
+* shortcut to display keyboard shortcuts and maybe execute actions (maybe use [Menu-Hammer](https://github.com/FryJay/MenuHammer)?) like AwesomeWM.
