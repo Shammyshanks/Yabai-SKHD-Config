@@ -1,6 +1,9 @@
 # Yabai-SKHD-Config
 My personal Yabai and SKHD config files.
 
+# Installation
+Download all files and drag into home folder.
+
 # The problem with most tiling window manager configs
 Tiling Window Managers are, by design, meant to be keyboard-driven. This requires that some modifiers be almost completely reserved for operating the window manager. MacOS only has 4 modifiers to begin with, and we need to choose a modifier combination that won't conflict with applications.
 
