@@ -51,6 +51,8 @@ Note: if you don't care about typing unique charecters with `Option` and `Shift`
 # A quick note on left vs right modifiers and the Function Key
 Yabai *does* support differentiating left vs right modifiers, but since we are going to be using "vim-style" keybindings, we are going to try and keep our hands on the home row as much as possible. This means it will be easier to type commands using the left modifiers than the right as there is no `RControl` on most Mac Keyboards and this configuration should work on both the built-in keyboard and external keyboards.
 
+Since the user will be using the left modifier keys, all of the shortcuts will be executed using the keys on the right hand of the keyboard.
+
 As for the function key, this is a weird one. It *is* recognized by yabai but acts differently than the other modifiers and cannot always be picked up by applications. This, combined with the fact that it will not be found on most keyboards made me hesitant to rely on it for WM control. Instead, I will be using it for mouse control later on. If you don't mind, feel free to use it for Yabai.
 
 # How to use Keyboard shortcuts
@@ -61,6 +63,8 @@ In this configuration, `mod1` will the be the main modifier and as such it will 
 `mod2` is for actions similar to it's `mod1` counterpart but less frequently used.
 
 `mod3` is for more rare actions and as such will be used the least.
+
+The keyboard shortcuts are designed to be easy to remember. Most shortcuts are just using the last 4 keys on the left hand side e.g. h/j/k/l on the homerow, u/i/o/p on the top row, and v/b/n/m on the bottom row. Some keys are inherited from the base operating system (like creating and destroying spaces and selecting displays) so it is easy to remember. The remaining, most important actions are tied to large easy to hit keys like backspace, return, backslash, zero, plus, minus, and semicolon. The most difficult keys to remember are the open and close brackets but they are rarely going to be used by many users.
 
 # Special features
 Many actions have carrousel enabled. For example, if you focus the previous space while you are on the first space, you will be takes to the last space.
@@ -86,50 +90,59 @@ There is a section near the bottom of .yabairc that creates exceptions for vario
 
 This .yabairc will also auto-update yabai if you install via --HEAD.
 
+NOTE: if you want the focus spaces shortcut to work in mission control you need to follow these steps:
+1. System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Mission Control -> "Move left a space" to "ctrl + cmd + left"
+2. System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Mission Control -> "Move right a space" to "ctrl + cmd + right"
+
 # Keyboard Shortcut Table
-| Shortcut | Action | Notes |
-| -------- | ------ | ----- |
-| `mod1 + h/j/k/l` | focus window west/south/north/east | Carrousel, works in `bsp` |
-| `mod1 + j/k` | focus window next/prev | Carrousel, works in `stack` |
-| `mod1 + h/l` | swap window next/prev | Carrousel, works in `stack` |
-| `mod2 + h/j/k/l` | move window west/south/north/east | Carrousel, works in `bsp` and `float` |
-| `mod3 + h/j/k/l` | swap window west/south/north/east | Carrousel
-| `mod1 + u/i/o/p` | resize window left/down/up/right | Only works in `float` |
-| `mod2 + u/i/o/p` | set insertion point west/south/north/east | Only works in `bsp` |
-| `mod1 + v/b/n/m` | make window fill left/bottom/top/right half of screen | works in `float` |
-| `mod2 + v/b/n/m` | make window fill top-right/top-left/bottom-right/bottom-left quarter of screen | works in `float` |
-| `mod1 + backspace` | toggle float and center window on screen | works in all space types |
-| `mod2 + backspace` | make floating window fill screen | works in `float` |
-| `mod3 + backspace` | cycle space management type `bsp`->`stack`->`float`->`bsp` | works in all space types |
-| `mod1 + return` | rotate windows clockwise | works in `bsp` |
-| `mod2 + return` | rotate windows counter-clockwise | works in `bsp` |
-| `mod3 + return` | balance window sizes | works in `bsp` |
-| `mod1 + left/down/up/right` | fill left/bottom/top/right half of screen | works in `float` |
-| `mod1 + \` | toggle split type | works in `bsp` |
-| `mod2 + \` | toggle parent zoom | works in `bsp` |
-| `mod3 + \` | toggle picture-in-picture | works in all space types |
-| `mod1 + ;` | toggle fullscreen | works in `bsp` |
-| `mod1 + [` | mirror tree y-axis | works in `bsp` |
-| `mod1 + ]` | mirror tree x-axis | works in `bsp` |
-| `mod2 + [` | swap current window with the largest window | works in `bsp` |
-| `mod2 + ]` | swap current window with the smallest window | works in `bsp` |
-| `mod1 + 0` | set desktop offset to 0 | works in `bsp` and `stack` |
-| `mod2 + 0` | set window offset to 0 | works in `bsp` |
-| `mod3 + 0` | set desktop and window offset to 0 | works in `bsp` and kind-of `stack` |
-| `mod1 + -` | decrease desktop offset | works in `bsp` and `stack` |
-| `mod2 + -` | decrease window offset | works in `bsp` |
-| `mod3 + -` | decrease desktop and window offset | works in `bsp` and kind-of `stack` |
-| `mod1 + +` | increase desktop offset | works in `bsp` and `stack` |
-| `mod2 + +` | increase window offset | works in `bsp` |
-| `mod3 + +` | increase desktop and window offset | works in `bsp` and kind-of `stack` |
-| `mod1 + t` | create new space and focus | works in all space types |
-| `mod2 + t` | create new space, moves window to new space and focus | works in all space types |
-| `mod1 + w` | destroy space and focus first space | works in all space types |
-| `control + left/right` | fast focus prev/next space | Carrousel, works in all space types, works in mission control |
-| `mod1 + left/right` | move window to prev/next space and focus prev/next space | Carrousel, works in all space types |
-| `mod2 + left/right` | swap space left/right | Carrousel, works in all space types |
-| `mod3 + left/right` | send window to prev/next display | Carrousel, works in all space types |
-| `option + tab` | focus next display | Carrousel, works in all space types |
-| `option + shift + tab` | focus prev display | Carrousel, works in all space types |
-| `mod3 + r` | reload yabai | works in all space types |
-| `ctrl + return` | open new terminal | works in all space types |
+| Shortcut                    | Action                                                                         | Notes |
+| --------------------------- | ------------------------------------------------------------------------------ | ----- |
+| `mod1 + h/j/k/l`            | focus window west/south/north/east                                             | Carrousel, works in `bsp` |
+| `mod1 + j/k`                | focus window next/prev                                                         | Carrousel, works in `stack` |
+| `mod1 + h/l`                | swap window next/prev                                                          | Carrousel, works in `stack` |
+| `mod2 + h/j/k/l`            | move window west/south/north/east                                              | Carrousel, works in `bsp` and `float` |
+| `mod3 + h/j/k/l`            | swap window west/south/north/east                                              | Carrousel
+| `mod1 + u/i/o/p`            | resize window left/down/up/right                                               | Only works in `float` |
+| `mod2 + u/i/o/p`            | set insertion point west/south/north/east | Only works in `bsp`                |
+| `mod1 + v/b/n/m`            | make window fill left/bottom/top/right half of screen                          | works in `float` |
+| `mod2 + v/b/n/m`            | make window fill top-right/top-left/bottom-right/bottom-left quarter of screen | works in `float` |
+| `mod1 + backspace`          | toggle float and center window on screen | works in all space types            |
+| `mod2 + backspace`          | make floating window fill screen | works in `float`                            |
+| `mod3 + backspace`          | cycle space management type `bsp`->`stack`->`float`->`bsp`                     | works in all space types |
+| `mod1 + return`             | rotate windows clockwise                                                       | works in `bsp` |
+| `mod2 + return`             | rotate windows counter-clockwise                                               | works in `bsp` |
+| `mod3 + return`             | balance window sizes                                                           | works in `bsp` |
+| `mod1 + left/down/up/right` | fill left/bottom/top/right half of screen                                      | works in `float` |
+| `mod1 + \`                  | toggle split type                                                              | works in `bsp` |
+| `mod2 + \`                  | toggle parent zoom                                                             | works in `bsp` |
+| `mod3 + \`                  | toggle picture-in-picture                                                      | works in all space types |
+| `mod1 + ;`                  | toggle fullscreen                                                              | works in `bsp` |
+| `mod1 + [`                  | mirror tree y-axis                                                             | works in `bsp` |
+| `mod1 + ]`                  | mirror tree x-axis                                                             | works in `bsp` |
+| `mod2 + [`                  | swap current window with the largest window                                    | works in `bsp` |
+| `mod2 + ]`                  | swap current window with the smallest window                                   | works in `bsp` |
+| `mod1 + 0`                  | set desktop offset to 0                                                        | works in `bsp` and `stack` |
+| `mod2 + 0`                  | set window offset to 0                                                         | works in `bsp` |
+| `mod3 + 0`                  | set desktop and window offset to 0                                             | works in `bsp` and kind-of `stack` |
+| `mod1 + -`                  | decrease desktop offset                                                        | works in `bsp` and `stack` |
+| `mod2 + -`                  | decrease window offset                                                         | works in `bsp` |
+| `mod3 + -`                  | decrease desktop and window offset                                             | works in `bsp` and kind-of `stack` |
+| `mod1 + +`                  | increase desktop offset                                                        | works in `bsp` and `stack` |
+| `mod2 + +`                  | increase window offset                                                         | works in `bsp` |
+| `mod3 + +`                  | increase desktop and window offset                                             | works in `bsp` and kind-of `stack` |
+| `mod1 + t`                  | create new space and focus                                                     | works in all space types |
+| `mod2 + t`                  | create new space, moves window to new space and focus                          | works in all space types |
+| `mod1 + w`                  | destroy space and focus first space                                            | works in all space types |
+| `control + left/right`      | fast focus prev/next space                                                     | Carrousel, works in all space types, works in mission control |
+| `mod1 + left/right`         | move window to prev/next space and focus prev/next space                       | Carrousel, works in all space types |
+| `mod2 + left/right`         | swap space left/right                                                          | Carrousel, works in all space types |
+| `mod3 + left/right` | send window to prev/next display                                                       | Carrousel, works in all space types |
+| `option + tab` | focus next display                                                                          | Carrousel, works in all space types |
+| `option + shift + tab` | focus prev display                                                                  | Carrousel, works in all space types |
+| `mod3 + r` | reload yabai                                                                                    | works in all space types |
+| `ctrl + return` | open new terminal                                                                          | works in all space types |
+
+# Future Roadmap
+* Implement thirds for floating windows (will be more useful if I ever upgrade to an ultrawide/super ultrawide.
+* Export gaps variable for use in .gaps script when using keyboard shortcuts for changing gaps
+* Implement dynamic desktops, as seen in gnome desktop. (I already have a working script but it's glitchy)
