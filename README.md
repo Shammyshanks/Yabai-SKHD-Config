@@ -108,6 +108,8 @@ NOTE: if you want the focus spaces shortcut to work in mission control you need 
 1. System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Mission Control -> "Move left a space" to "ctrl + cmd + left"
 2. System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Mission Control -> "Move right a space" to "ctrl + cmd + right"
 
+NOTE: The create new terminal action only works with iTerm2
+
 # Keyboard Shortcut Table
 | Shortcut                    | Action                                                                         | Notes |
 | --------------------------- | ------------------------------------------------------------------------------ | ----- |
