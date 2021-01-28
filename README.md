@@ -152,18 +152,23 @@ NOTE: The create new terminal action only works with iTerm2
 | `mod1 + t`                  | create new space and focus                                                     | works in all space types |
 | `mod2 + t`                  | create new space, moves window to new space and focus                          | works in all space types |
 | `mod1 + w`                  | destroy space and focus first space                                            | works in all space types |
+| `control + 1-9`             | focus a specific desktop                                                       | works in all space types |
+| `mod1 + 1-9`                | send window to a specific space and focus said desktop                         | works in all space types |
+| `mod2 + 1-9`                | swap current space with specified space                                        | works in all space types |
+| `mod3 + 1-9`                | send window to a specific display and focus said display                       | works in all space types |
 | `control + left/right`      | fast focus prev/next space                                                     | Carrousel, works in all space types, works in mission control |
 | `mod1 + left/right`         | move window to prev/next space and focus prev/next space                       | Carrousel, works in all space types |
 | `mod2 + left/right`         | swap space left/right                                                          | Carrousel, works in all space types |
-| `mod3 + left/right` | send window to prev/next display                                                       | Carrousel, works in all space types |
-| `option + tab` | focus next display                                                                          | Carrousel, works in all space types |
-| `option + shift + tab` | focus prev display                                                                  | Carrousel, works in all space types |
-| `mod3 + r` | reload yabai                                                                                    | works in all space types |
-| `ctrl + return` | open new terminal                                                                          | works in all space types |
+| `mod3 + left/right`         | send window to prev/next display                                               | Carrousel, works in all space types |
+| `option + tab`              | focus next display                                                             | Carrousel, works in all space types |
+| `option + shift + tab`      | focus prev display                                                             | Carrousel, works in all space types |
+| `mod3 + r`                  | reload yabai                                                                   | works in all space types |
+| `ctrl + return`             | open new terminal                                                              | works in all space types |
 
 # Future Roadmap
 * Implement thirds for floating windows (will be more useful if I ever upgrade to an ultrawide/super ultrawide.
 * Export gaps variable for use in .gaps script when using keyboard shortcuts for changing gaps. Might require some changes to yabai.
 * Implement dynamic desktops, as seen in gnome desktop. (I already have a working script but it's glitchy)
-* shortcut to display keyboard shortcuts and maybe execute actions (maybe use [Menu-Hammer](https://github.com/FryJay/MenuHammer)?) like AwesomeWM.
+* Shortcut to display keyboard shortcuts and maybe execute actions (maybe use [Menu-Hammer](https://github.com/FryJay/MenuHammer)?) like AwesomeWM.
 * Implement quick way to lable current space, maybe via alfred? Also add specific apps for spaces.
+* Add support for focusing specific display
