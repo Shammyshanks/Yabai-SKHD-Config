@@ -81,7 +81,13 @@ In this configuration, `mod1` will the be the main modifier and as such it will 
 
 `mod3` is for more rare actions and as such will be used the least.
 
-The keyboard shortcuts are designed to be easy to remember. Most shortcuts are just using the last 4 keys on the left hand side e.g. h/j/k/l on the homerow, u/i/o/p on the top row, and v/b/n/m on the bottom row. Some keys are inherited from the base operating system (like creating and destroying spaces and selecting displays) so it is easy to remember. The remaining, most important actions are tied to large easy to hit keys like backspace, return, backslash, zero, plus, minus, and semicolon. The most difficult keys to remember are the open and close brackets but they are rarely going to be used by many users.
+The keyboard shortcuts are designed to be easy to remember. Most shortcuts are just using the last 4 keys on the left hand side e.g. h/j/k/l on the homerow, u/i/o/p on the top row, and v/b/n/m on the bottom row. 
+
+Some keys are inherited from the base operating system (like creating and destroying spaces and selecting displays) so it is easy to remember. 
+
+The remaining, most important actions are tied to large easy to hit keys like backspace, return, backslash, zero, plus, minus, and semicolon. 
+
+The most difficult keys to remember are the open and close brackets but they are rarely going to be used by most users.
 
 # Special features
 Many actions have carrousel enabled. For example, if you focus the previous space while you are on the first space, you will be takes to the last space.
