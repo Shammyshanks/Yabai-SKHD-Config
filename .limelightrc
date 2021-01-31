@@ -1,0 +1,12 @@
+source ~/.cache/wal/colors.sh # pywal scheme - update if needed
+
+# limelight template colours
+CACTV=$(echo $color3 | sed 's/#//')
+CNORM=$(echo $color1 | sed 's/#//')
+
+limelight -m config debug_output on
+limelight -m config placement interior
+limelight -m config width 3
+limelight -m config radius 1.0
+limelight -m config active_color 0xff$CACTV
+limelight -m config normal_color 0xff$CNORM
