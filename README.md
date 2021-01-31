@@ -101,7 +101,7 @@ This script also integrates with my [SwiftBar](https://github.com/swiftbar/Swift
 Several actions execute external scripts found in the `.scripts` folder. The script expects this folder and it's files to be in the home folder.
 
 These actions include
-* turning borders off if there is only 1 managed window in the current space
+* turning borders off if there is only 1 managed window in the current space via [Limelight](https://github.com/koekeishiya/limelight)
 * turning gaps off if there is only 1 managed window in the current space (This is where you would change the gaps settings, not .yabairc)
 * turning some Übersicht widgets off if there are any windows in the current space (This would require configuration if you plan on using it)
 * cycling through space management types
@@ -111,7 +111,12 @@ This yabairc configuration file also integrates with [pywal](https://github.com/
 
 There is a section near the bottom of .yabairc that creates exceptions for various apps that mess with the .gaps and .border scripts in .scripts folder. If you are having trouble with an app, try adding it here.
 
-This .yabairc will also auto-update yabai if you install via --HEAD.
+This config also eshews yabai's built-in border feature for [limelight](https://github.com/koekeishiya/limelight) due to better compatibility with MacOS Big Sur's new rounded window corners. `.yabairc` and `.scripts/.border` both expect you to have the `.limelightrc` file in your home directory. If you want to adjust the border thickness, it needs to be done in the `.limelightrc` file as `.script/.border` only toggles Limelight on and off.
+
+This .yabairc will also auto-update yabai if you installed yabai via --HEAD.
+```
+brew install yabai --HEAD
+```
 
 NOTE: if you want the focus spaces shortcut to work in mission control you need to follow these steps:
 1. System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Mission Control -> "Move left a space" to "ctrl + cmd + left"
@@ -138,7 +143,7 @@ NOTE: The create new terminal action only works with iTerm2
 | `mod2 + return`             | rotate windows counter-clockwise                                               | works in `bsp` |
 | `mod3 + return`             | balance window sizes                                                           | works in `bsp` |
 | `mod1 + left/down/up/right` | fill left/bottom/top/right half of screen                                      | works in `float` |
-| `mod1 + \`                  | toggle split type                                                              | works in `bsp` |
+| `mod1 + \`                  | toggle split type for current space                                            | works in `bsp` |
 | `mod2 + \`                  | toggle parent zoom                                                             | works in `bsp` |
 | `mod3 + \`                  | toggle picture-in-picture                                                      | works in all space types |
 | `mod1 + ;`                  | toggle fullscreen                                                              | works in `bsp` |
