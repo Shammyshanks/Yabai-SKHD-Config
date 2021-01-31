@@ -3,11 +3,8 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
-# bsp or float (default: bsp)
+# default management type for yabai on startup
 yabai -m config layout bsp
-
-# New window spawns to the left if vertical split, or top if horizontal split
-# yabai -m config window_placement first_child
 
 # New window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
@@ -23,23 +20,10 @@ yabai -m config window_gap     0
 source ~/.cache/wal/colors.sh # pywal scheme - update if needed
 
 # yabai template colours
-CBACK=$(echo $background | sed 's/#//')
-CFORE=$(echo $foreground | sed 's/#//')
-CACTV=$(echo $color3 | sed 's/#//')
-CNORM=$(echo $color1 | sed 's/#//')
 CINSE=$(echo $foreground | sed 's/#//')
 
-# Status bar off
-yabai -m config status_bar                   off
-yabai -m config status_bar_background_color  0xff$CBACK
-yabai -m config status_bar_foreground_color  0xff$CFORE
-
 # Set window border to 6 pixels and set color to blue for active window and grey for inactive
-yabai -m config window_border on
-yabai -m config window_border_width 4
-yabai -m config active_window_border_color 0xff$CACTV
-yabai -m config normal_window_border_color 0xff$CNORM
-yabai -m config insert_window_border_color 0xff$CINSE
+yabai -m config window_border off
 
 # on or off (default: off)
 yabai -m config auto_balance on
@@ -71,13 +55,6 @@ yabai -m config window_topmost on
 # modify window shadows (default: on, options: on, off, float)
 # example: show shadows only for floating windows
 yabai -m config window_shadow off
-
-# window opacity (default: off)
-# example: render all unfocused windows with 90% opacity
-yabai -m config window_opacity off
-yabai -m config window_opacity_duration 0.0
-yabai -m config active_window_opacity 1.0
-yabai -m config normal_window_opacity 0.90
 
 # turn off manage and border for various apps
 yabai -m rule --add app="Installer" manage=off
@@ -129,6 +106,7 @@ yabai -m signal --add event=window_deminimized action="source ~/.scripts/.gaps; 
 yabai -m signal --add event=display_changed action="source ~/.scripts/.gaps; source ~/.scripts/.uber; source ~/.scripts/.border"
 yabai -m signal --add event=mission_control_exit action="source ~/.scripts/.gaps; source ~/.scripts/.uber; source ~/.scripts/.border"
 
+# Debug mode on
 yabai -m config debug_output on
 
 # Auto update yabai
