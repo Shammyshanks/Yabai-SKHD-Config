@@ -22,7 +22,7 @@ source ~/.cache/wal/colors.sh # pywal scheme - update if needed
 # yabai template colours
 CINSE=$(echo $foreground | sed 's/#//')
 
-# Set window border to 6 pixels and set color to blue for active window and grey for inactive
+# Set window border to off due to limelight integration
 yabai -m config window_border off
 
 # on or off (default: off)
