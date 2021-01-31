@@ -32,7 +32,7 @@ According to the Keyboard section of [Apple's Style Guide](https://developer.app
 
 > As much as possible, avoid using the Control key as a modifier
 
-This tells us which key combinations are most likely to be used by various applications on MacOS. We know now to avoid all single-key shortcuts, and any shortcut combination involving the `Command` key as it is the primary modifier in MacOS. We also know to avoid `Control` shortcut keys by themselves as they are often used by terminal applications (like vim) and Emacs-style keybindings are still found within MacOS when in any textbox (shortcuts like <C-a> goes to the beginning of the line, <C-d> deletes forward, etc...). We should also probably leave the `Option` + `Shift` modifier alone since it's used to write capital, accented charecter like `ü`, `æ`, and `ß`. We also want to reserve the four-key shortcut alone since we will be using that to make a new modifier, the `Hyper` key.
+This tells us which key combinations are most likely to be used by various applications on MacOS. We know now to avoid all single-key shortcuts, and any shortcut combination involving the `Command` key as it is the primary modifier in MacOS. We also know to avoid `Control` shortcut keys by themselves as they are often used by terminal applications (like vim) and Emacs-style keybindings are still found within MacOS when in any textbox (shortcuts like <C-a> goes to the beginning of the line, <C-d> deletes forward, etc...). We should also probably leave the `Option` + `Shift` modifier alone since it's used to write capital, accented charecter like `ü`, `æ`, and `ß`. We also want to reserve the four-key shortcut alone since we will be using that to make a new modifier, the `Hyper` key, for use later.
 
 Remember, we want to preserve as much of the original functionality as possible.
 
@@ -89,8 +89,22 @@ The remaining, most important actions are tied to large easy to hit keys like ba
 
 The most difficult keys to remember are the open and close brackets but they are rarely going to be used by most users.
 
+# Configuration
+This is a highly opinionated config of yabai.
+
+* By default, the management type is bsp
+* By default, the windows are spawned to the right and bottom
+* By default, the padding is set to 0 (modified by `.scripts/.gaps`)
+* Auto balance is on
+* Auto raise is turned on but can be turned off while holding down `Control`
+* Mouse follows focus is turned off
+* Mouse button 1 will move and mouse button 2 will resize
+* The default mouse drop action is stack not swap as it is rarely used (might be changed soon)
+
 # Special features
-Many actions have carrousel enabled. For example, if you focus the previous space while you are on the first space, you will be takes to the last space.
+Many actions have carrousel enabled. 
+
+For example, if you focus the previous space while you are on the first space, you will be takes to the last space.
 
 Several actions also use exit codes to figure out if the current space is `bsp`, `float`, or `stack`. This way the shortcut to resize a window in `bsp` can also be used to resize the window in `float`.
 
@@ -107,7 +121,9 @@ These actions include
 * cycling through space management types
 * creating a new terminal window
 
-This yabairc configuration file also integrates with [pywal](https://github.com/dylanaraps/pywal)
+This yabairc configuration file also integrates with [pywal](https://github.com/dylanaraps/pywal).
+
+This config also integrates with [Stackline](https://github.com/AdamWagner/stackline).
 
 There is a section near the bottom of .yabairc that creates exceptions for various apps that mess with the .gaps and .border scripts in .scripts folder. If you are having trouble with an app, try adding it here.
 
@@ -127,17 +143,20 @@ NOTE: The create new terminal action only works with iTerm2
 # Keyboard Shortcut Table
 | Shortcut                    | Action                                                                         | Notes |
 | --------------------------- | ------------------------------------------------------------------------------ | ----- |
+| `control + mouse movement`  | Disable focus follows mouse wile held down                                     | Works in all space types |
+| `control + left mouse`      | Move window                                                                    | Works in all space types |
+| `control + right mouse`     | Resize window                                                                  | Works in all space types |
 | `mod1 + h/j/k/l`            | focus window west/south/north/east                                             | Carrousel, works in `bsp` |
 | `mod1 + j/k`                | focus window next/prev                                                         | Carrousel, works in `stack` |
 | `mod1 + h/l`                | swap window next/prev                                                          | Carrousel, works in `stack` |
 | `mod2 + h/j/k/l`            | move window west/south/north/east                                              | Carrousel, works in `bsp` and `float` |
 | `mod3 + h/j/k/l`            | swap window west/south/north/east                                              | Carrousel
 | `mod1 + u/i/o/p`            | resize window left/down/up/right                                               | Only works in `float` |
-| `mod2 + u/i/o/p`            | set insertion point west/south/north/east | Only works in `bsp`                |
+| `mod2 + u/i/o/p`            | set insertion point west/south/north/east                                      | Only works in `bsp` |
 | `mod1 + v/b/n/m`            | make window fill left/bottom/top/right half of screen                          | works in `float` |
 | `mod2 + v/b/n/m`            | make window fill top-right/top-left/bottom-right/bottom-left quarter of screen | works in `float` |
-| `mod1 + backspace`          | toggle float and center window on screen | works in all space types            |
-| `mod2 + backspace`          | make floating window fill screen | works in `float`                            |
+| `mod1 + backspace`          | toggle float and center window on screen                                       | works in all space types |
+| `mod2 + backspace`          | make floating window fill screen                                               | works in `float` |
 | `mod3 + backspace`          | cycle space management type `bsp`->`stack`->`float`->`bsp`                     | works in all space types |
 | `mod1 + return`             | rotate windows clockwise                                                       | works in `bsp` |
 | `mod2 + return`             | rotate windows counter-clockwise                                               | works in `bsp` |
@@ -183,3 +202,4 @@ NOTE: The create new terminal action only works with iTerm2
 * Shortcut to display keyboard shortcuts and maybe execute actions (maybe use [Menu-Hammer](https://github.com/FryJay/MenuHammer)?) like AwesomeWM.
 * Implement quick way to lable current space, maybe via alfred? Also add specific apps for spaces.
 * Add support for focusing specific display
+* Change mouse drop action based on management type?
