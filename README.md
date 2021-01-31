@@ -123,7 +123,7 @@ These actions include
 
 This yabairc configuration file also integrates with [pywal](https://github.com/dylanaraps/pywal).
 
-This config also integrates with [Stackline](https://github.com/AdamWagner/stackline).
+This config also integrates with [Stackline](https://github.com/AdamWagner/stackline). If the current space is not in bsp, the borders will turn off, allowing you to focus on Stackline's pills. If there is only one window in the stack, the gaps will be set to 0 and stackline will automatically disapear.
 
 There is a section near the bottom of .yabairc that creates exceptions for various apps that mess with the .gaps and .border scripts in .scripts folder. If you are having trouble with an app, try adding it here.
 
