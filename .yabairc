@@ -114,4 +114,4 @@ yabai -m signal --add event=mission_control_exit action="source ~/.scripts/.gaps
 yabai -m config debug_output on
 
 # Auto update yabai
-YABAI_CERT=yabai-cert sh -c "$(curl -fsSL "https://git.io/update-yabai")" &
+#YABAI_CERT=yabai-cert sh -c "$(curl -fsSL "https://git.io/update-yabai")" &
