@@ -1,34 +1,34 @@
 # HJKL
 
 # focus window
-ctrl + alt - h : (yabai -m window --focus west || yabai -m window --focus east) || (yabai -m window --swap stack.prev || yabai -m window --swap stack.last)
-ctrl + alt - j : (yabai -m window --focus south || yabai -m window --focus north) || (yabai -m window --focus stack.next || yabai -m window --focus stack.first)
-ctrl + alt - k : (yabai -m window --focus north || yabai -m window --focus south) || (yabai -m window --focus stack.prev || yabai -m window --focus stack.last)
+ctrl + alt - j : (yabai -m window --focus west || yabai -m window --focus east) || (yabai -m window --swap stack.prev || yabai -m window --swap stack.last)
+ctrl + alt - k : (yabai -m window --focus south || yabai -m window --focus north) || (yabai -m window --focus stack.next || yabai -m window --focus stack.first)
+ctrl + alt - i : (yabai -m window --focus north || yabai -m window --focus south) || (yabai -m window --focus stack.prev || yabai -m window --focus stack.last)
 ctrl + alt - l : (yabai -m window --focus east || yabai -m window --focus west) || (yabai -m window --swap stack.next || yabai -m window --swap stack.first)
 
 # move window
-ctrl + shift - h : (yabai -m window --warp west || yabai -m window --warp east) || yabai -m window --move rel:-40:0
-ctrl + shift - j : (yabai -m window --warp south || yabai -m window --warp north) || yabai -m window --move rel:0:40
-ctrl + shift - k : (yabai -m window --warp north || yabai -m window --warp south) || yabai -m window --move rel:0:-40
+ctrl + shift - j : (yabai -m window --warp west || yabai -m window --warp east) || yabai -m window --move rel:-40:0
+ctrl + shift - k : (yabai -m window --warp south || yabai -m window --warp north) || yabai -m window --move rel:0:40
+ctrl + shift - i : (yabai -m window --warp north || yabai -m window --warp south) || yabai -m window --move rel:0:-40
 ctrl + shift - l : (yabai -m window --warp east || yabai -m window --warp west) || yabai -m window --move rel:40:0
 
 # swap window
-ctrl + alt + shift - h : yabai -m window --swap west || yabai -m window --swap east
-ctrl + alt + shift - j : yabai -m window --swap south || yabai -m window --swap north
-ctrl + alt + shift - k : yabai -m window --swap north || yabai -m window --swap south
+ctrl + alt + shift - j : yabai -m window --swap west || yabai -m window --swap east
+ctrl + alt + shift - k : yabai -m window --swap south || yabai -m window --swap north
+ctrl + alt + shift - i : yabai -m window --swap north || yabai -m window --swap south
 ctrl + alt + shift - l : yabai -m window --swap east || yabai -m window --swap west
 
 # UIOP
 
 # resize window
 ctrl + alt - u : yabai -m window --resize right:40:0 & yabai -m window --resize left:-40:0
-ctrl + alt - i : yabai -m window --resize bottom:0:-40 & yabai -m window --resize top:0:40
+ctrl + alt - 8 : yabai -m window --resize bottom:0:-40 & yabai -m window --resize top:0:40
 ctrl + alt - o : yabai -m window --resize bottom:0:40 & yabai -m window --resize top:0:-40
 ctrl + alt - p : yabai -m window --resize right:-40:0 & yabai -m window --resize left:40:0
 
 # set insertion point in focused container
 ctrl + shift - u : yabai -m window --insert west
-ctrl + shift - i : yabai -m window --insert south
+ctrl + shift - 8 : yabai -m window --insert south
 ctrl + shift - o : yabai -m window --insert north
 ctrl + shift - p : yabai -m window --insert east
 
