@@ -1,5 +1,5 @@
 # Yabai-SKHD-Config
-My personal Yabai and SKHD config files.
+ SxC97's personal Yabai and SKHD config files.
 
 # Installation
 Download all files and drag into home folder.
